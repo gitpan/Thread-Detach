@@ -1,0 +1,28 @@
+README for Thread::Detach
+
+Perl versions before 5.8.4 don't support the "detach" method of the threads
+module on Windows!.  This module provides a temporary fix for this problem
+if it is running under Windows and with a version of Perl that has the problem.
+In any other situation, this module does nothing.
+
+                         *** A note of CAUTION ***
+
+This module only functions on Perl versions 5.8.0 and later.  And then
+only when threads are enabled with -Dusethreads.  It is of no use with
+any version of Perl before 5.8.0 or without threads enabled.
+
+                         *************************
+
+Copyright (c) 2004 Elizabeth Mattijsen <liz@dijkmat.nl>. All rights
+reserved.  This program is free software; you can redistribute it and/or
+modify it under the same terms as Perl itself.
+
+Required Modules:
+ Thread::Exit (0.08)
+
+The build is standard:
+
+perl Makefile.PL
+make
+make test
+make install
